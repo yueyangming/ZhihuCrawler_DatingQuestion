@@ -86,7 +86,8 @@ def _main(url_list, start, end, city_keyword, gender_keyword, text_len_filter,
             all_result += temp_result_list
 
     df = pd.DataFrame(all_result)
-    df.to_excel('{}_{}_{}_{}.xlsx'.format(city_keyword, gender_keyword, start, end))
+    DateString = time.strftime('%Y-%m-%d', time.localtime())
+    df.to_excel('{}_{}_{}_{}-{}.xlsx'.format(city_keyword, gender_keyword, DateString, start, end))
     boswer.close()
 
 
